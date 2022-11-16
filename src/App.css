@@ -159,3 +159,22 @@ padding-top: 15px;
   justify-content: flex-start;
   margin-left: 60px;
 }
+
+.card-pizza {
+  margin: 2rem;
+}
+.content-pizza {
+  display: flex;
+}
+.content-pizza-img{
+  width: 100%;
+  padding: 1rem;
+}
+.content-pizza-info{
+  width: 70%;
+  padding: 1rem;
+}
+.content-pizza-info .span {
+  text-align: justify;
+  padding-bottom: 1rem;
+}
