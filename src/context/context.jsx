@@ -10,7 +10,7 @@ const Context = ({children}) => {
     useEffect(() => {
         setPizzas(Data)
     }, [])
-console.log(pizzas)
+
     return(
         <PizzasContext.Provider
             value={{
