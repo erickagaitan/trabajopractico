@@ -4,9 +4,9 @@ const Ingredients =({Ingredients})=>{
            <p className="bold">Ingredientes:</p> 
            <ul>
             {
-                Ingredients.map((ingredients)=>{
+                Ingredients.map((Ingredients)=>{
                     return (
-                        <li key={ingredients}>- {ingredients}</li>
+                        <li key={Ingredients}>- {Ingredients}</li>
                     )
                 })
 

@@ -5,7 +5,8 @@ export const PizzasContext = createContext()
 
 const Context = ({children}) => {
 
-    const [pizzas,setPizzas]=useState()
+const [pizzas,setPizzas]=useState()
+const [cart,setCart]=useState([])
 
     useEffect(() => {
         setPizzas(Data)
@@ -15,6 +16,8 @@ const Context = ({children}) => {
         <PizzasContext.Provider
             value={{
                 pizzas,
+                cart,
+                setCart
             }}
         >
             {children}
