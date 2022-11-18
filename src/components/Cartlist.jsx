@@ -1,9 +1,12 @@
+import React, { useContext} from 'react'
+import { PizzasContext } from '../context/context';
 import { formatPrice } from "../Utils/utils";
 import { Link } from "react-router-dom";
 import '../App.css'
 
+const Cartlist =({ cart,pizzas })=>{
 
-const Cartlist =({ cart })=>{
+    const { addToCart, removefromCart, cartTotal } = useContext(PizzasContext)
     return (
         
             <div className="cartlist">
@@ -18,12 +21,12 @@ const Cartlist =({ cart })=>{
                                 <h4>{item.name}</h4>
                             </div>
                                 <div className="pricefinal">
-                                    <h4 className="precio">${formatPrice(item.price)}</h4>
+                                    <h4 className="precio">${formatPrice(item.price * item.count)}</h4>
                                     <div className="cotenedorbtn">
                                         <div className="btns"></div>
-                                        <button className="btn btn-primary">-</button>
-                                        <p className="bold">1</p>
-                                        <button className="btn btn-secundary">+</button>
+                                        <button className="btn btn-primary" onClick={ () => removefromCart(item)}>-</button>
+                                        <p className="bold">{item.count}</p>
+                                        <button className="btn btn-secundary" onClick={() => addToCart(item)}>+</button>
                                     </div>
                                 </div>
                         </li>
@@ -33,7 +36,7 @@ const Cartlist =({ cart })=>{
 
                 </ul>
                 <div className="total">
-                    <h3> Total:$0</h3>
+                    <h3> Total: {cartTotal()}</h3>
                     <Link to="/pagar" className="btn-final">Ir a pagar</Link>
                 </div>
             </div>

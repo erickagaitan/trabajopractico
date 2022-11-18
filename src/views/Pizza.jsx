@@ -8,7 +8,7 @@ import Cart from "./Cart";
 
 const Pizza =()=>{
 const { id } = useParams()
-const { pizzas, setCart, cart }=useContext(PizzasContext)
+const { pizzas, addToCart, cart }=useContext(PizzasContext)
 const [selected, setSelected ] = useState([])
 
 useEffect (()=>{
@@ -44,7 +44,7 @@ console.log(cart)
                         <div className="btn-row-pizza">
                             <h3 className="price">$ {formatPrice(item.price)}</h3>
                        
-                            <button className="btn-primary" onClick={() => setCart([...cart,item])}>Añadir</button>
+                            <button className="btn-primary" onClick={() => addToCart(item)}>Añadir</button>
                         </div>
                     </div>
                     

@@ -11,7 +11,7 @@ import Ingredients from "../components/ingredients"
 
 const Menu =()=>{
 
-const {pizzas,setCart, cart}=useContext(PizzasContext)
+const {pizzas,addToCart, cart}=useContext(PizzasContext)
 const navigate = useNavigate ()
 const viewPizza =(id)=>navigate(`/pizza/${id}`)
 
@@ -30,7 +30,7 @@ return (
 
                     <div className="btn-row">
                         <button className="btn-primary"onClick={()=>viewPizza(item.id)}>Ver mas</button>
-                        <button className="btn-secundary" onClick={() => setCart([...cart, item])}>Añadir</button>
+                        <button className="btn-secundary" onClick={() => addToCart(item)}>Añadir</button>
                     </div>
             
                 </div>
